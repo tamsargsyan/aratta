@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import ARM from "../../assets/armenia_flag.svg";
-import LOGO from "../../assets/logo.png"
+import LOGO from "../../assets/logo.svg";
 import "./index.css";
 
 const Navbar = () => {
@@ -30,13 +30,13 @@ const Navbar = () => {
 
   const lang = "";
   const location = useLocation();
-  console.log(location)
+  // console.log(location);
 
   return (
     <div className='navbar container'>
-      <div className='navbar_logo'>
-        <img src={LOGO} alt="Aratta"/>
-      </div>
+      <NavLink to='/' className='navbar_logo'>
+        <img src={LOGO} alt='Aratta' />
+      </NavLink>
       <div className='nav_links'>
         {menu.map(m => (
           <NavLink

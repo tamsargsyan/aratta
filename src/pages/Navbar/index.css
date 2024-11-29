@@ -13,8 +13,8 @@
   gap: 35px;
 }
 .flag_img {
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
 }
 .flag_img img {
@@ -35,8 +35,9 @@
   color: var(--main-color-blue);
 }
 .navbar_logo {
-  width: 70px;
-  height: 70px;
+  /* width: 70px; */
+  /* height: 70px; */
+  width: 140px;
 }
 .navbar_logo img {
   width: 100%;
@@ -47,11 +48,30 @@
   font-size: 20px ;
 }
 .auth_btn {
-  padding: 8px 40px;
+  padding: 7px 38px;
   border-radius: 30px;
   border: none;
   background: var(--main-color-blue);
   color: #fff;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1080px) {
+  .flag_img {
+    width: 30px;
+    height: 30px;
+  }
+  .auth_btn {
+    font-size: 14px;
+  }
+  .nav_links a, .auth_btn {
+    font-size: 14px;
+  }
+  .navbar_logo {
+    width: 100px;
+  }
+  .nav_links {
+    gap: 30px;
+  }
 }
