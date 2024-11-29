@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
-import ARM from "../../assets/armenia_flag.svg";
 import LOGO from "../../assets/logo.svg";
 import "./index.css";
+import FlagDropdown from "../../components/FlagDropdown";
 
 const Navbar = () => {
   const menu = [
@@ -49,9 +49,10 @@ const Navbar = () => {
       </div>
       <div className='flag_auth_container'>
         <div className='flags'>
-          <div className='flag_img'>
+          {/* <div className='flag_img'>
             <img src={ARM} alt='flag' />
-          </div>
+          </div> */}
+          <FlagDropdown />
         </div>
         <button className='auth_btn'>Login</button>
       </div>

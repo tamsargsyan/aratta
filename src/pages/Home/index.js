@@ -61,6 +61,21 @@ export const Home = () => {
     },
   ];
 
+  const handleRentItemsClick = ({ key }) => {
+    const clickedItem = rent_items.find(item => item.key === key);
+    console.log(clickedItem.label, "-----rent");
+  };
+
+  const handleCityItemsClick = ({ key }) => {
+    const clickedItem = city_items.find(item => item.key === key);
+    console.log(clickedItem.label, "-----city");
+  };
+
+  const handleDistrictItemsClick = ({ key }) => {
+    const clickedItem = district_items.find(item => item.key === key);
+    console.log(clickedItem.label, "-----district");
+  };
+
   return (
     <div className='home_section'>
       {/* <Navbar /> */}
@@ -83,6 +98,7 @@ export const Home = () => {
               className='hero_filter_option'
               menu={{
                 items: rent_items,
+                onClick: handleRentItemsClick,
               }}
               trigger={["click"]}>
               <NavLink onClick={e => e.preventDefault()}>
@@ -97,6 +113,7 @@ export const Home = () => {
               className='hero_filter_option'
               menu={{
                 items: city_items,
+                onClick: handleCityItemsClick,
               }}
               trigger={["click"]}>
               <NavLink onClick={e => e.preventDefault()}>
@@ -111,6 +128,7 @@ export const Home = () => {
               className='hero_filter_option'
               menu={{
                 items: district_items,
+                onClick: handleDistrictItemsClick,
               }}
               trigger={["click"]}>
               <NavLink onClick={e => e.preventDefault()}>
@@ -123,19 +141,6 @@ export const Home = () => {
             <NavLink className='hero_filter_search_btn'>
               <SearchOutlined />
             </NavLink>
-            {/* <Dropdown
-              className='hero_filter_option'
-              menu={{
-                items,
-              }}
-              trigger={["click"]}>
-              <a onClick={e => e.preventDefault()}>
-                <Space>
-                  District
-                  <DownOutlined />
-                </Space>
-              </a>
-            </Dropdown> */}
           </div>
         </div>
       </div>

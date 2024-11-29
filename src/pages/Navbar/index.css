@@ -16,6 +16,7 @@
   width: 35px;
   height: 35px;
   cursor: pointer;
+  display: block;
 }
 .flag_img img {
   width: 100%;
@@ -45,7 +46,7 @@
 }
 .nav_links a,
 .auth_btn {
-  font-size: 20px ;
+  font-size: 20px;
 }
 .auth_btn {
   padding: 7px 38px;
@@ -57,6 +58,15 @@
   font-size: 18px;
 }
 
+.flags_dropdown {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  /* animation: 3s ease-in 1s 2 reverse both paused slide-in; */
+}
+
 @media screen and (max-width: 1080px) {
   .flag_img {
     width: 30px;
@@ -65,7 +75,8 @@
   .auth_btn {
     font-size: 14px;
   }
-  .nav_links a, .auth_btn {
+  .nav_links a,
+  .auth_btn {
     font-size: 14px;
   }
   .navbar_logo {
