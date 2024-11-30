@@ -1,9 +1,12 @@
 import "./index.css";
 import { DownOutlined, SearchOutlined } from "@ant-design/icons";
 import { Dropdown, Space } from "antd";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
 export const Home = () => {
+  const { t } = useTranslation();
+
   const rent_items = [
     {
       label: "For Rent",
@@ -76,6 +79,8 @@ export const Home = () => {
     console.log(clickedItem.label, "-----district");
   };
 
+  console.log(t("hero_heading"));
+
   return (
     <div className='home_section'>
       {/* <Navbar /> */}
@@ -84,12 +89,8 @@ export const Home = () => {
           <div className='hero_bg_dark'></div>
         </div>
         <div className='hero_content_container'>
-          <p className='hero_content_heading'>
-            Jobs for Unemployed Youth No Experience? No Problem
-          </p>
-          <p className='hero_content_paragraph'>
-            Empowering Youth through No Experience Job Opportunities
-          </p>
+          <p className='hero_content_heading'>{t("hero_heading")}</p>
+          <p className='hero_content_paragraph'>{t("hero_subheading")}</p>
           <NavLink to='/' className='hero_content_btn'>
             Find a home
           </NavLink>

@@ -2,6 +2,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import LOGO from "../../assets/logo.svg";
 import "./index.css";
 import FlagDropdown from "../../components/FlagDropdown";
+import Cookies from "js-cookie";
 
 const Navbar = () => {
   const menu = [
@@ -28,13 +29,12 @@ const Navbar = () => {
     },
   ];
 
-  const lang = "";
   const location = useLocation();
-  // console.log(location);
+  const lang = Cookies.get("i18next") || "en";
 
   return (
     <div className='navbar container'>
-      <NavLink to='/' className='navbar_logo'>
+      <NavLink to={`/${lang}/`} className='navbar_logo'>
         <img src={LOGO} alt='Aratta' />
       </NavLink>
       <div className='nav_links'>
