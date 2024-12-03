@@ -129,10 +129,26 @@
   .hero_content_paragraph {
     font-size: 14px;
   }
-  .hero_content_btn  {
+  .hero_content_btn {
     font-size: 12px;
   }
   .hero_filter_container {
     padding: 0px 30px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .hero_filter_option {
+    width: 100%;
+  }
+  .hero_content_heading,
+  .hero_content_paragraph {
+    width: 360px;
+    text-align: center;
+  }
+  .hero_filter_search_btn {
+    width: 100%;
+    border-radius: 40px;
+    
   }
 }
