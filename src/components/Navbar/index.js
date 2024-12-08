@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import LOGO from "../../assets/logo.svg";
 import "./index.css";
-import FlagDropdown from "../../components/FlagDropdown";
+import FlagDropdown from "../FlagDropdown";
 import Cookies from "js-cookie";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
@@ -34,6 +34,11 @@ const Navbar = () => {
   const lang = Cookies.get("i18next") || "en";
   const { width } = useWindowSize();
 
+  const handleMenuClose = () => {
+    const menuCheckbox = document.getElementById("menuCheckbox");
+    if (menuCheckbox) menuCheckbox.click();
+  };
+
   return (
     <div className='navbar container'>
       <NavLink to={`/${lang}/`} className='navbar_logo'>
@@ -48,35 +53,31 @@ const Navbar = () => {
             <span></span>
             <ul id='menu'>
               <li>
-                <a href='#'>
-                  <label for='menuCheckbox' onclick='this.parentNode.click();'>
+                <NavLink to=''>
+                  <label htmlFor='menuCheckbox' onClick={handleMenuClose}>
                     Home
                   </label>
-                </a>
+                  ;
+                </NavLink>
               </li>
               <li>
-                <a href='#about'>
-                  <label for='menuCheckbox' onclick='this.parentNode.click();'>
-                    About
+                <NavLink to=''>
+                  <label htmlFor='menuCheckbox' onClick={handleMenuClose}>
+                    Home
                   </label>
-                </a>
+                  ;
+                </NavLink>
               </li>
 
               <li>
-                <label for='menuCheckbox'>
-                  <a>Info</a>
+                <label htmlFor='menuCheckbox'>
+                  <NavLink to=''>Info</NavLink>
                 </label>
               </li>
               <li>
-                <label for='menuCheckbox'>
-                  <a>Contact</a>
+                <label htmlFor='menuCheckbox'>
+                  <NavLink to=''>Contact</NavLink>
                 </label>
-              </li>
-
-              <li>
-                <a href='https://erikterwan.com/' target='_blank'>
-                  Show me more
-                </a>
               </li>
             </ul>
           </div>
